@@ -41,8 +41,8 @@ public BasePage(ExtentTest test, WebDriver driver) {
     public WebDriver openBrowser(String Browser) {
     	
     	if(Browser.contentEquals("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", RunConfig.CHROME_DRIVER_EXE);
-			driver= new ChromeDriver();
+			WebDriverManager.chromedriver().setup();
+                        driver = new ChromeDriver();
 		}
 		else if (Browser.contentEquals("Firefox")) {
 			System.setProperty("webdriver.gecko.driver",RunConfig.MOZILLA_DRIVER_EXE);
