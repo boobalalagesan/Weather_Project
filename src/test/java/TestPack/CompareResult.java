@@ -62,7 +62,7 @@ public class CompareResult extends BasePage {
 
 		SendMailAfterExec sendMailAfterExec= new SendMailAfterExec();
 		try {
-			//sendMailAfterExec.sendMail();
+			sendMailAfterExec.sendMail();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
