@@ -7,7 +7,7 @@
         <methods>
           <include name="openUrl"/>
           <include name="openReport"/>
-          <include name="TempCompare" invocation-numbers="3 0 4 1 2 5"/>
+          <include name="TempCompare" invocation-numbers="0 2 3 5"/>
           <include name="close"/>
         </methods>
       </class> <!-- TestPack.CompareResult -->
