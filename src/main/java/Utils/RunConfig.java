@@ -13,7 +13,7 @@ public class RunConfig {
 	public static final String REPORT_PATH=System.getProperty("user.dir")+ File.separator+"ExtentReport";
 	public static final String Extent_Config_Path=System.getProperty("user.dir")+File.separator+"src"+File.separator+"test"
 			+File.separator+"resources"+File.separator+"extentConfig.xml";
-
+	public static final String DATA_PATH=System.getProperty("user.dir")+ File.separator+"RunData"+File.separator+"testData.xlsx";
 	public static String Test_ApplicationURL="https://www.accuweather.com/";
 	public static String Write_Sheet="TestData";
 }

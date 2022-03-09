@@ -1,5 +1,6 @@
 package email;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
@@ -13,12 +14,13 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import Utils.ExcelData;
 import Utils.RunConfig;
 
 
 public class SendMailAfterExec {
 
-	public void sendMail() {
+	public void sendMail() throws IOException {
 
 		System.out.println("=====Sending Mail=====");
 		Properties prop=new Properties();
@@ -26,10 +28,13 @@ public class SendMailAfterExec {
 		prop.put("mail.smtp.starttls.enable", "true");
 		prop.put("mail.smtp.host", "smtp.gmail.com");
 		prop.put("mail.smtp.port", "587");
+		ExcelData eData=new ExcelData(".//RunData//EmailCredentials.xlsx");
+		 
+	
+		 final String username = eData.getEncryptedCellData("CredentialsSheet", 1, 0);
+		 final String password=eData.getEncryptedCellData("CredentialsSheet", 1, 1);
 		
-		
-		final String username="alagesanboobal@gmail.com";
-		final String password="BooBal123@";
+		 System.out.println( username +"||"+password);
 
 		Session session=Session.getDefaultInstance(prop, new Authenticator() {
 			@Override
@@ -38,12 +43,17 @@ public class SendMailAfterExec {
 			}
 
 		});
+		
 	
 		final String toRecepiant="boobalalagesan@gmail.com";
 		final String ccRecepiant="boobalalagesan@outlook.com";
 		Message message =prepareMessage(session, username, toRecepiant, ccRecepiant);
 		try {
-			Transport.send(message);
+			//Transport.send(message);
+			Transport transport = session.getTransport("smtp");
+	        transport.connect();
+	        transport.sendMessage(message, message.getAllRecipients());
+	        transport.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -77,7 +87,7 @@ public class SendMailAfterExec {
 		return message;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		SendMailAfterExec sendMailAfterExec=new SendMailAfterExec();
 		sendMailAfterExec.sendMail();
 

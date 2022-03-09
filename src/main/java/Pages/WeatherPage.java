@@ -18,7 +18,7 @@ import org.testng.Assert;
 public class WeatherPage extends BasePage{
 	
 	public WeatherPage(WebDriver driver,ExtentTest test) {
-		super(test,driver);
+		super(driver,test);
 	}
 	
 	public void getUITempValue(String city) throws InterruptedException, IOException {

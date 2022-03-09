@@ -5,9 +5,8 @@
     <classes>
       <class name="TestPack.CompareResult">
         <methods>
-          <include name="openUrl"/>
           <include name="openReport"/>
-          <include name="TempCompare" invocation-numbers="1"/>
+          <include name="TempCompare" invocation-numbers="0 1"/>
           <include name="close"/>
         </methods>
       </class> <!-- TestPack.CompareResult -->

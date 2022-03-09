@@ -10,20 +10,24 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 
+import Utils.ExtentReportManager;
 import Utils.RunConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage {
 	public WebDriver driver;
+	public static  int focus_Row;
+	public ExtentReports extent=ExtentReportManager.setExtentReport();
 	public ExtentTest test;
 	public BasePage() {
 
 	}
-	public BasePage(ExtentTest test, WebDriver driver) {
+	public BasePage(WebDriver driver,ExtentTest test) {
 		this.driver=driver;
 		this.test=test;
 	}
@@ -46,14 +50,18 @@ public class BasePage {
 			driver = new ChromeDriver();
 		}
 		else if (Browser.contentEquals("Firefox")) {
-			System.setProperty("webdriver.gecko.driver",RunConfig.MOZILLA_DRIVER_EXE);
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
 		else if(Browser.contentEquals("Edge")) {
-			System.setProperty("webdriver.edge.driver", RunConfig.EDGE_DRIVER_EXE);
+			WebDriverManager.edgedriver().setup();
+			driver=new EdgeDriver();
 		}
 		driver.manage().window().maximize();
 		driver.get(RunConfig.Test_ApplicationURL);
+		test.log(Status.PASS, "Application Opened"); 
+		takeScreenshot();
 		return driver;
 	}
+	
 }
