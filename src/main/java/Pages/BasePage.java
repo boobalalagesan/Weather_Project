@@ -46,8 +46,8 @@ public class BasePage {
 	public WebDriver openBrowser(String Browser) {
 
 		if(Browser.contentEquals("Chrome")) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver=WebDriverManager.chromedriver().create();
+			//driver = new ChromeDriver();
 		}
 		else if (Browser.contentEquals("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();

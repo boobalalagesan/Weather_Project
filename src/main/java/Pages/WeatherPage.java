@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
@@ -19,6 +21,7 @@ public class WeatherPage extends BasePage {
 
 	public WeatherPage(WebDriver driver, ExtentTest test) {
 		super(driver, test);
+		
 	}
 
 	public void getUITempValue(String city) throws InterruptedException, IOException {

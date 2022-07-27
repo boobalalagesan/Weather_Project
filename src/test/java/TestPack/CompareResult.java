@@ -35,7 +35,7 @@ public class CompareResult extends BasePage {
 	public void TempCompare(String RunMode, String Browser, String city) throws InterruptedException, IOException {
 
 		test = extent.createTest("Comaparison value for " + city);
-		driver = openBrowser(Browser);
+		driver = openBrowser("Chrome");
 		weatherPage = new WeatherPage(driver, test);
 		PageFactory.initElements(driver, weatherPage);
 		try {

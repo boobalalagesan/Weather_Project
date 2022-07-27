@@ -16,9 +16,9 @@ public class TestClass extends BasePage{
 	
 	@Test
 	public void run() throws IOException {
-		
-		WebDriverManager.edgedriver().setup();
-		WebDriver driver=new EdgeDriver();
+
+		WebDriver driver=WebDriverManager.edgedriver().create();
+		//WebDriver driver=new EdgeDriver();
 		driver.get("https://www.youtube.com/");
 		/*
 		 * test.log(Status.PASS, "YouTube opened"); takeScreenshot();
