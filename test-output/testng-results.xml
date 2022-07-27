@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-11T09:54:54 IST" name="Test Suite" finished-at="2022-03-11T09:55:39 IST" duration-ms="44355">
+  <suite started-at="2022-07-27T13:25:11 IST" name="Default suite" finished-at="2022-07-27T13:25:41 IST" duration-ms="29886">
     <groups>
     </groups>
-    <test started-at="2022-03-11T09:54:54 IST" name="Compare temperature" finished-at="2022-03-11T09:55:39 IST" duration-ms="44355">
+    <test started-at="2022-07-27T13:25:11 IST" name="Default test" finished-at="2022-07-27T13:25:41 IST" duration-ms="29886">
       <class name="TestPack.CompareResult">
-        <test-method signature="TempCompare(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestPack.CompareResult@67f639d3]" started-at="2022-03-11T09:54:55 IST" name="TempCompare" data-provider="cityData" finished-at="2022-03-11T09:55:18 IST" duration-ms="23024" status="PASS">
+        <test-method signature="TempCompare(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:TestPack.CompareResult@7d3d101b]" started-at="2022-07-27T13:25:12 IST" name="TempCompare" data-provider="cityData" finished-at="2022-07-27T13:25:36 IST" duration-ms="23901" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -25,28 +25,59 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Temperatures are not equal]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Temperatures are not equal
+at org.testng.Assert.fail(Assert.java:99)
+at Pages.WeatherPage.getAPIValue(WeatherPage.java:77)
+at Pages.WeatherPage.getUITempValue(WeatherPage.java:61)
+at TestPack.CompareResult.TempCompare(CompareResult.java:41)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TempCompare -->
-        <test-method is-config="true" signature="close()[pri:0, instance:TestPack.CompareResult@67f639d3]" started-at="2022-03-11T09:55:34 IST" name="close" finished-at="2022-03-11T09:55:34 IST" duration-ms="541" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:TestPack.CompareResult@7d3d101b]" started-at="2022-07-27T13:25:36 IST" name="close" finished-at="2022-07-27T13:25:41 IST" duration-ms="4959" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-        <test-method is-config="true" signature="openReport()[pri:0, instance:TestPack.CompareResult@67f639d3]" started-at="2022-03-11T09:55:39 IST" name="openReport" finished-at="2022-03-11T09:55:39 IST" duration-ms="633" status="PASS">
+        <test-method is-config="true" signature="openReport()[pri:0, instance:TestPack.CompareResult@7d3d101b]" started-at="2022-07-27T13:25:41 IST" name="openReport" finished-at="2022-07-27T13:25:42 IST" duration-ms="1047" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openReport -->
       </class> <!-- TestPack.CompareResult -->
-      <class name="com.DemoPack.demoTestRun">
-        <test-method signature="run()[pri:0, instance:com.DemoPack.demoTestRun@201a4587]" started-at="2022-03-11T09:55:18 IST" name="run" finished-at="2022-03-11T09:55:34 IST" duration-ms="15873" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- run -->
-        <test-method is-config="true" signature="close()[pri:0, instance:com.DemoPack.demoTestRun@201a4587]" started-at="2022-03-11T09:55:34 IST" name="close" finished-at="2022-03-11T09:55:39 IST" duration-ms="4356" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- com.DemoPack.demoTestRun -->
-    </test> <!-- Compare temperature -->
-  </suite> <!-- Test Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -4,7 +4,6 @@
 	<test name="Compare temperature">
 		<classes>
 			<class name="TestPack.CompareResult" />
-			<class name="com.DemoPack.demoTestRun" />
 		</classes>
 	</test>
 </suite>
