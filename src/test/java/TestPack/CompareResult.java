@@ -3,24 +3,11 @@ package TestPack;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
-
 import Utils.ExcelData;
 import org.openqa.selenium.WebDriver;
-/*import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;*/
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import org.testng.annotations.*;
 import Pages.BasePage;
 import Pages.WeatherPage;
 import Utils.RunConfig;
@@ -35,7 +22,7 @@ public class CompareResult extends BasePage {
 	public void TempCompare(String RunMode, String Browser, String city) throws InterruptedException, IOException {
 
 		test = extent.createTest("Comaparison value for " + city);
-		driver = openBrowser("Chrome");
+		driver = openBrowser("Edge");
 		weatherPage = new WeatherPage(driver, test);
 		PageFactory.initElements(driver, weatherPage);
 		try {

@@ -7,10 +7,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.Status;
 
 import Pages.BasePage;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class demoTestRun extends BasePage{
 	WebDriver driver;
