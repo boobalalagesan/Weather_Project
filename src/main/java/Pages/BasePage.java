@@ -7,17 +7,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
-
 import Utils.ExtentReportManager;
 import Utils.RunConfig;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage {
 	public WebDriver driver;
@@ -46,15 +42,12 @@ public class BasePage {
 	public WebDriver openBrowser(String Browser) {
 
 		if(Browser.contentEquals("Chrome")) {
-			driver=WebDriverManager.chromedriver().create();
-			//driver = new ChromeDriver();
+			driver = new ChromeDriver();
 		}
 		else if (Browser.contentEquals("Firefox")) {
-			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
 		else if(Browser.contentEquals("Edge")) {
-			WebDriverManager.edgedriver().setup();
 			driver=new EdgeDriver();
 		}
 		driver.manage().window().maximize();
