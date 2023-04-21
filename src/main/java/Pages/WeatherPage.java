@@ -35,7 +35,7 @@ public class WeatherPage extends BasePage {
 		WebElement searchBar = driver.findElement(By.xpath("//input[@placeholder='Search']"));
 		searchBar.sendKeys(city + Keys.ENTER);
 		TimeUnit.SECONDS.sleep(2);
-		WebElement Suggest = driver.findElement(By.xpath("//div[@class='content-module']//a[1]"));
+		WebElement Suggest = driver.findElement(By.xpath("//div[@class='locations-list content-module']/a[1]"));
 		Suggest.click();
 		TimeUnit.SECONDS.sleep(2);
 		List<WebElement> totalFrames = driver
